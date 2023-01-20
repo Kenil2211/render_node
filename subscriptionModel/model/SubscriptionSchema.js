@@ -9,10 +9,20 @@ const subcriptionSchema = new Schema({
         required:true,
         unique:true
     },
-    validFor:{
+    api:[{
+        type:Schema.Types.ObjectId,
+        ref:'NetflixAPIs',
+        required:true,
+        unique:true
+    }],
+    validFor:[{
         type:String,
         required:true,
-    },
+    }],
+    count_hits:[{
+        type:Number,
+        required:true
+    }],
     token:{
         type:String,
         unique:true
@@ -21,4 +31,4 @@ const subcriptionSchema = new Schema({
 {timestamps:true}
 )
 
-module.exports = mongoose.model('netflixsubscriptions2',subcriptionSchema)
+module.exports = mongoose.model('netflixsubscriptions10',subcriptionSchema)

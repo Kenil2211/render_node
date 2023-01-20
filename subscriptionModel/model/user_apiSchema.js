@@ -12,8 +12,13 @@ const userApiSchema = new Schema({
     },
     api:[{
         type:Schema.Types.ObjectId,
-        ref:'myApis',
+        ref:'NetflixAPIs',
+        required:true,
         unique:true
     }],
+    count_hits:[{
+        type:Number,
+        required:true
+    }]
 
 }) 

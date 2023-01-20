@@ -3,7 +3,7 @@ const subSchema = require('../model/SubscriptionSchema')
 exports.addSubscription = (req,res)=>{
 
     const new_sub = new subSchema(req.body)
-    
+
     new_sub.save((err,success)=>{
         if(err)
         {
@@ -13,11 +13,12 @@ exports.addSubscription = (req,res)=>{
         }
         else{
                 res.status(201).json({
-                message:"Subscription added for "+req.body.validFor,
+                message:"Subscription added ",
             })
         }
     })
 }
+
 
 exports.getDataByToken = (req,res) =>{
 

@@ -4,14 +4,15 @@ const jwt_expire = require('jwt-check-expiration')
 
 const token = async (req,res,next) => {
     
+
     jwt.sign(req.body,"secret",
     {
-        expiresIn: req.body.validFor,
+        expiresIn: "24h",
     },(err,result)=>{
         if(err)
         {
             res.status(500).json({
-                message:"Error"
+                message:"Error........."
             })
         }
         else
