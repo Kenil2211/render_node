@@ -10,7 +10,7 @@ const PORT= process.env.PORT || 3000
 const MONGO_PASSWORD=process.env.MONGO_PASSWORD
 // module.exports={PORT}
 
-const fapiRoute = require('./routes/firstApiRoute')
+// const fapiRoute = require('./routes/firstApiRoute')
 const UserRoute = require('./routes/UserRoute')
 const EmployeeRoute = require('./routes/EmployeeRoutes')
 const DepartmentRoute = require('./routes/DepartmentRoutes')
@@ -21,7 +21,7 @@ const RoleRoutes = require('./routes/RoleRoutes')
 const SignupRoute = require('./routes/SignupRoutes')
 const NetflixRoutes = require('./subscriptionModel/routes/NetflixRoute')
 
-app.use('/fapi',fapiRoute)
+// app.use('/fapi',fapiRoute)
 app.use('/user',UserRoute)
 app.use('/employee1',EmployeeRoute)
 app.use('/department',DepartmentRoute)
