@@ -17,7 +17,8 @@ const token = async (req,res,next) => {
         }
         else
         {
-            req.body.token = result;
+            mytokens = req.body.token
+            mytokens.push(result)
             // console.log("wced",result)
         }
         next()

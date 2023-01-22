@@ -19,7 +19,6 @@ exports.addSubscription = (req,res)=>{
     })
 }
 
-
 exports.getDataByToken = (req,res) =>{
 
     const uid = req.body.data.userId
@@ -39,3 +38,23 @@ exports.getDataByToken = (req,res) =>{
     })
 }
 
+exports.subscribeApi = (req,res) =>{
+
+    subSchema.findOneAndUpdate(
+        {userId:req.body.userId},
+        {$push : {api:req.body.api, validFor:req.body.validFor,count_hits:req.body.count_hits} },
+        {new:true},
+        (err,success)=>{
+            if(err){
+                res.status(500).json({
+                    message:"Error in subscribing to this API"
+                })
+            }
+            else{
+                res.status(200).json({
+                    message:"Successfully Subscribed to API"
+                })
+            }
+        }
+    )
+}

@@ -19,6 +19,7 @@ const ExamUserRoute = require('./routes/ExamUserRoute')
 const QuestionRoute = require('./routes/QuestionRoute')
 const RoleRoutes = require('./routes/RoleRoutes')
 const SignupRoute = require('./routes/SignupRoutes')
+const uploadRoutes = require('./routes/UploadRoutes');
 const NetflixRoutes = require('./subscriptionModel/routes/NetflixRoute')
 
 // app.use('/fapi',fapiRoute)
@@ -29,6 +30,7 @@ app.use('/exam',ExamRoute)
 app.use('/examuser',ExamUserRoute)
 app.use('/examquestion',QuestionRoute)
 app.use('/role',RoleRoutes)
+app.use('/upload',uploadRoutes)
 app.use('/signup',SignupRoute)
 app.use('/netflix',NetflixRoutes)
 

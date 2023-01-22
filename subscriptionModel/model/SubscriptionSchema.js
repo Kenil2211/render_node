@@ -23,12 +23,12 @@ const subcriptionSchema = new Schema({
         type:Number,
         required:true
     }],
-    token:{
+    token:[{
         type:String,
         unique:true
-    }
+    }]
 },
 {timestamps:true}
 )
 
-module.exports = mongoose.model('netflixsubscriptions10',subcriptionSchema)
+module.exports = mongoose.model('netflixsubscriptions',subcriptionSchema)
