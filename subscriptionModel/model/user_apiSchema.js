@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
+
 //one user subscribe to many apis =>hits differently on each API
 
 const userApiSchema = new Schema({

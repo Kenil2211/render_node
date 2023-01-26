@@ -1,9 +1,10 @@
 const multer = require("multer");
 const path = require("path");
+const gdriveController = require('./GDriveUploadConroller')
 
 
 const storage = multer.diskStorage({
-    destination:'./uploads',
+    // destination:'./uploads',
     filename: (req, file, ab) => {
       ab(null, file.originalname);
     },
@@ -26,6 +27,7 @@ exports.uploadFile = (req, res) => {
         file: req.file,
         message: "File uploaded successfully",
       })
+      gdriveController.uploadFile(req.file.path)
     }
   });
 };

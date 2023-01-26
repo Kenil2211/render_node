@@ -2,9 +2,8 @@ const subSchema = require('../model/SubscriptionSchema')
 const jwt = require('jsonwebtoken')
 const jwt_expire = require('jwt-check-expiration')
 
-const token = async (req,res,next) => {
-    
 
+const token = async (req,res,next) => {
     jwt.sign(req.body,"secret",
     {
         expiresIn: "24h",
@@ -17,8 +16,10 @@ const token = async (req,res,next) => {
         }
         else
         {
-            mytokens = req.body.token
-            mytokens.push(result)
+            // mytokens = req.body.token.length
+            // mytokens.push(result)
+            // console.log('token array' , mytokens)
+            req.body.token = result
             // console.log("wced",result)
         }
         next()

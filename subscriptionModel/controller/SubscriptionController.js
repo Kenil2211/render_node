@@ -1,4 +1,5 @@
 const subSchema = require('../model/SubscriptionSchema')
+const IP = require('ip')
 
 exports.addSubscription = (req,res)=>{
 
@@ -40,8 +41,12 @@ exports.getDataByToken = (req,res) =>{
 
 exports.subscribeApi = (req,res) =>{
 
+    // console.log('userid : ',req.body.userId)
+    const ipAddress = IP.address()
+    
+    console.log("------",req.socket.remoteAddress,"--------",ipAddress)
     subSchema.findOneAndUpdate(
-        {userId:req.body.userId},
+        {_id:req.body.id},
         {$push : {api:req.body.api, validFor:req.body.validFor,count_hits:req.body.count_hits} },
         {new:true},
         (err,success)=>{

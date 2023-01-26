@@ -21,8 +21,10 @@ const RoleRoutes = require('./routes/RoleRoutes')
 const SignupRoute = require('./routes/SignupRoutes')
 const uploadRoutes = require('./routes/UploadRoutes');
 const NetflixRoutes = require('./subscriptionModel/routes/NetflixRoute')
+const GdriveRoutes = require('./routes/GDriveRoutes')
 
 // app.use('/fapi',fapiRoute)
+
 app.use('/user',UserRoute)
 app.use('/employee1',EmployeeRoute)
 app.use('/department',DepartmentRoute)
@@ -33,6 +35,7 @@ app.use('/role',RoleRoutes)
 app.use('/upload',uploadRoutes)
 app.use('/signup',SignupRoute)
 app.use('/netflix',NetflixRoutes)
+app.use('/gdrive',GdriveRoutes)
 
 // connect with cluster
 // mongoose.connect("mongodb+srv://kenil:"+MONGO_PASSWORD+"@cluster0.599iw6h.mongodb.net/club5?retryWrites=true&w=majority",{

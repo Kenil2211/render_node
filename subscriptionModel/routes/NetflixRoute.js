@@ -19,6 +19,6 @@ router.post('/getdata',jwt.verifyToken,subscriptionController.getDataByToken)
 
 router.post('/createapi',apiController.addApi)
 
-router.post('/newapi',jwt.token,subscriptionController.subscribeApi)
+router.post('/buyapi',jwt.token,subscriptionController.subscribeApi)
 
 module.exports = router
