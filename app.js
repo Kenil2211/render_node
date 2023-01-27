@@ -6,7 +6,7 @@ require('dotenv').config()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
-const PORT= process.env.PORT || 3000
+const PORT= process.env.PORT || 3001
 const MONGO_PASSWORD=process.env.MONGO_PASSWORD
 // module.exports={PORT}
 
@@ -22,6 +22,7 @@ const SignupRoute = require('./routes/SignupRoutes')
 const uploadRoutes = require('./routes/UploadRoutes');
 const NetflixRoutes = require('./subscriptionModel/routes/NetflixRoute')
 const GdriveRoutes = require('./routes/GDriveRoutes')
+const RoyalTokenRoutes = require('./royalWallet/routes/RoyalTokenRoutes')
 
 // app.use('/fapi',fapiRoute)
 
@@ -36,6 +37,7 @@ app.use('/upload',uploadRoutes)
 app.use('/signup',SignupRoute)
 app.use('/netflix',NetflixRoutes)
 app.use('/gdrive',GdriveRoutes)
+app.use('/wallet',RoyalTokenRoutes)
 
 // connect with cluster
 // mongoose.connect("mongodb+srv://kenil:"+MONGO_PASSWORD+"@cluster0.599iw6h.mongodb.net/club5?retryWrites=true&w=majority",{
