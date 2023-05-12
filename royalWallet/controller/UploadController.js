@@ -7,12 +7,14 @@ const e = require("express");
 
 
 const storage = multer.diskStorage({
-    destination:'./uploads',
+    // destination:'./uploads',
     filename: (req, file, ab) => {
       ab(null, file.originalname);
     },
   });
   
+
+    
   const upload = multer(
   {
     storage: storage,

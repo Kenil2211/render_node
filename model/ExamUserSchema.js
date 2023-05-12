@@ -11,7 +11,13 @@ const examUserSchema = new Schema({
         type:String,
         required:true
     },
-
+    email:{
+        type:String,
+        unique:true,
+    },
+    password:{
+        type:String,
+    },
     exam:[{
         type:Schema.Types.ObjectId,
         ref:'Exam'

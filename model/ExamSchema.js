@@ -13,7 +13,7 @@ const examSchema = new Schema({
     },
     questions:[{
         type:Schema.Types.ObjectId,
-        ref:'Question'
+        ref:'Questions'
     }]
 })
 

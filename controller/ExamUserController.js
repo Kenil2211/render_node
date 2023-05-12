@@ -81,3 +81,22 @@ exports.getAppearedUsersByExamid = (req,res)=>{
         }
     })
 }
+
+exports.isValidUser = (req,res)=>{
+
+    ExamUserSchema.findOne({email:req.body.email,password:req.body.password},(err,success)=>{
+
+        if(err)
+        {
+            res.status(500).json({
+                message:"Error in Checking for valid user data"
+            })
+        }
+        else{
+            res.status(200).json({
+                message:"User logged In successfully",
+                data:success
+            })
+        }
+    })
+} 

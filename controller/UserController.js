@@ -1,6 +1,13 @@
 const UserSchema = require('../model/UserSchema')
+const useragent = require('express-useragent')
+const ipLocation = require('ip-location')
+
 
 exports.getAllUsers = (req,res)=>{
+    function showPosition(position) {
+        console.log( position.coords.latitude )
+    }
+  
     UserSchema.find( (err,data)=>{
         if(err)
         {
@@ -9,6 +16,11 @@ exports.getAllUsers = (req,res)=>{
             })
         }
         else{
+            // console.log(req.getHeader())
+            
+            // navigator.geolocation.getCurrentPosition(showPosition)
+            
+            // console.log(req.useragent.isMobile)
             res.status(201).json({
                     message:"Data fetched successfully",
                     data:data
