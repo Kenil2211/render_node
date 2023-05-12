@@ -1,3 +1,7 @@
 om
 kenil
+<<<<<<< HEAD
+ok
+=======
 not ok
+>>>>>>> 1ab52d2cce3ddfd09e4bea90f60f20c541e72449
