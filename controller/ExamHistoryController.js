@@ -24,11 +24,11 @@ exports.addExamData = (req,res)=>{
 
 exports.getExamDataById = (req,res)=>{
 
-    var id = req.params.id
+    var eid = req.params.eid
     var uid1 = req.params.uid
     console.log('uid-',uid1)
 
-    examHistorySchema.find({eid:id, uid:uid1},(err,data)=>{
+    examHistorySchema.find({eid:eid, uid:uid1},(err,data)=>{
         if(err)
         {
             res.status(500).json({
@@ -36,10 +36,20 @@ exports.getExamDataById = (req,res)=>{
             })
         }
         else{
-            res.status(201).json({
-                message:"Success..",
-                data:data
-            })
+            if(data && data.length>0)
+            {
+                res.status(201).json({
+                    message:"Success..",
+                    data:data[0].answers
+                })
+            }
+            else{
+                res.status(201).json({
+                    message:"Success..",
+                    data:data[0].answers
+                })
+            }
+
         }
     })
 

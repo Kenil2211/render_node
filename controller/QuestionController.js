@@ -1,4 +1,5 @@
 const QuestionSchema = require('../model/QuestionSchema')
+const ExamSchema = require('../model/ExamSchema')
 
 exports.createQuestion = (req, res) => {
 

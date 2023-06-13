@@ -3,9 +3,9 @@ const router = express.Router()
 
 //ATTEMPTED EXAM INFO
 
-const examController = require('../controller/ExamHistoryController')
+const examHistoryController = require('../controller/ExamHistoryController')
 
-router.post('/addexam',examController.addExamData)
-router.get('/getexamhistory/:uid/:id',examController.getExamDataById)
+router.post('/addexam',examHistoryController.addExamData)
+router.get('/getexamhistory/:uid/:eid',examHistoryController.getExamDataById)
 
 module.exports = router
